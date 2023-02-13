@@ -1,3 +1,12 @@
+// Mehods we used to output in JS
+
+/*
+    alert("Hello GIRISH");
+    document.getElementById("h").innerHTML = "Girish";
+    document.write("Girish");       // we can not use defer with write 
+    console.log(5 + 6);
+*/
+
 // VARIABLES
 // Declare variable  : var 
 var a = 5;  // var is an old method
@@ -81,7 +90,6 @@ for(let key in person){     // traverse through object
 // UNDEFINEED
 let und;            // when no defined datatype
 
-
 //--------------------------------------------------------
 
 // type of varibale
@@ -113,3 +121,76 @@ console.log((7 == 8 ) || (6 == 5));     // false
 // not operator : reverse the decision
 console.log(!(6 == 6))   // false
 console.log(!(7 == 6))   // true
+
+// ternary operator : use when single line or variable assignment insted of if-else
+let isLoggedin = 1;
+let option = isLoggedin == 1 ? "Logout" : "Login";
+              // condition   // if true   // if false
+
+// To handel undefined
+let user;
+user ?? 'Girish'    // if user is undefined then assign girish to it
+
+// IF-ELSE
+let age = 14;
+if(age > 14)
+    console.log("you can vote");
+else
+    console.log("you can vote");
+
+// LOOPS
+
+arr = [1,2,3,4,5];
+
+// for loop
+for(let i = 0; i < arr.length; i++)
+{
+    console.log(arr[i]);
+}
+
+// while loop
+let counter = 0;
+while(counter != arr.length)
+{
+    console.log(arr[counter]);
+    counter++;
+}
+
+// do-while      // execute atlest one time
+counter = 0;
+do{
+    console.log(arr[counter]);
+    counter++;
+}while(counter != arr.length);
+
+// For-each
+arr.forEach((e)=>{
+    console.log("e", e);
+})
+
+// For-of
+for(let e of arr){
+    console.log(e);
+}
+
+// For-in       // for object e will contains key
+for(let e in arr){
+    console.log(e);
+}
+
+
+// break, continue and nested for loop same as other programming lannguages
+// we can give name to different layers of loop for break by name of that loop
+outer : for(let i = 0; i < 3; i++)
+{
+    inner : for(let j = 0; j < 3; j++)
+    {
+        if(j == 1)
+            break outer;  // which loop stop ? use for loop name
+
+        console.log("HOLA");
+    }
+
+    if(i == 1)
+        continue;
+}
